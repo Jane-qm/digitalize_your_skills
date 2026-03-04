@@ -1,0 +1,214 @@
+:root {
+  color-scheme: dark;
+  --bg: #0a0c16;
+  --panel: rgba(22, 26, 43, 0.85);
+  --line: rgba(255, 255, 255, 0.12);
+  --text: #f5f7ff;
+  --muted: #9da7c6;
+  --brand: #7b7dff;
+  --brand-2: #3ce6c9;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background: radial-gradient(circle at 20% 10%, #1c2452 0%, var(--bg) 42%) fixed;
+  color: var(--text);
+  font-family:
+    Inter,
+    "PingFang SC",
+    "Hiragino Sans GB",
+    "Microsoft YaHei",
+    sans-serif;
+  min-height: 100%;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.container {
+  width: min(1080px, 92vw);
+  margin: 0 auto;
+  padding: 28px 0 56px;
+}
+
+.title {
+  margin: 0;
+  font-size: clamp(1.9rem, 5vw, 2.8rem);
+  letter-spacing: 0.02em;
+}
+
+.subtitle {
+  margin: 12px 0 0;
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+.grid {
+  margin-top: 24px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 16px;
+}
+
+.card {
+  padding: 20px;
+  border-radius: 16px;
+  border: 1px solid var(--line);
+  background: var(--panel);
+  backdrop-filter: blur(8px);
+}
+
+.card h3 {
+  margin: 0;
+  font-size: 1.1rem;
+}
+
+.card p {
+  margin: 10px 0 18px;
+  color: var(--muted);
+  line-height: 1.5;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 38px;
+  padding: 0 14px;
+  border-radius: 10px;
+  border: 0;
+  cursor: pointer;
+  transition: 0.2s ease;
+  background: linear-gradient(90deg, var(--brand), var(--brand-2));
+  color: #0a0d1a;
+  font-weight: 700;
+}
+
+.btn:hover {
+  transform: translateY(-1px);
+}
+
+.btn.ghost {
+  background: transparent;
+  border: 1px solid var(--line);
+  color: var(--text);
+  font-weight: 500;
+}
+
+.section-title {
+  margin: 36px 0 12px;
+  font-size: 1.1rem;
+}
+
+.tag-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.tag {
+  border-radius: 999px;
+  border: 1px solid var(--line);
+  padding: 7px 12px;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.form-row {
+  display: grid;
+  gap: 6px;
+  margin-bottom: 14px;
+}
+
+.input,
+.select,
+.textarea {
+  width: 100%;
+  border-radius: 10px;
+  border: 1px solid var(--line);
+  padding: 10px 12px;
+  background: rgba(0, 0, 0, 0.2);
+  color: var(--text);
+  font: inherit;
+}
+
+.textarea {
+  min-height: 110px;
+  resize: vertical;
+}
+
+.chat-wrap {
+  margin-top: 20px;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  background: var(--panel);
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  min-height: 68vh;
+}
+
+.chat-toolbar {
+  display: grid;
+  gap: 10px;
+  grid-template-columns: 1fr 1fr;
+  padding: 14px;
+  border-bottom: 1px solid var(--line);
+}
+
+.chat-list {
+  padding: 14px;
+  overflow: auto;
+  display: grid;
+  gap: 12px;
+  align-content: start;
+}
+
+.bubble {
+  max-width: min(85%, 680px);
+  border-radius: 12px;
+  border: 1px solid var(--line);
+  padding: 11px 12px;
+  line-height: 1.55;
+  white-space: pre-wrap;
+}
+
+.bubble.assistant {
+  justify-self: start;
+  background: rgba(123, 125, 255, 0.12);
+}
+
+.bubble.user {
+  justify-self: end;
+  background: rgba(60, 230, 201, 0.12);
+}
+
+.chat-input-wrap {
+  border-top: 1px solid var(--line);
+  padding: 14px;
+  display: grid;
+  gap: 10px;
+}
+
+.chat-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+}
+
+.hint {
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.error {
+  color: #ff8ca4;
+}
